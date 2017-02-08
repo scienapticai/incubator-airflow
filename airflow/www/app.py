@@ -53,7 +53,7 @@ def create_app(config=None):
         from airflow.www import views
 
         admin = Admin(
-            app, name='Airflow',
+            app, name='Ether',
             static_url_path='/admin',
             index_view=views.HomeView(endpoint='', url='/admin', name="DAGs"),
             template_mode='bootstrap3',
@@ -77,23 +77,24 @@ def create_app(config=None):
             models.Log, Session, name="Logs", category="Browse"))
         av(vs.JobModelView(
             jobs.BaseJob, Session, name="Jobs", category="Browse"))
-        av(vs.PoolModelView(
-            models.Pool, Session, name="Pools", category="Admin"))
-        av(vs.ConfigurationView(
-            name='Configuration', category="Admin"))
-        av(vs.UserModelView(
-            models.User, Session, name="Users", category="Admin"))
-        av(vs.ConnectionModelView(
-            models.Connection, Session, name="Connections", category="Admin"))
-        av(vs.VariableView(
-            models.Variable, Session, name="Variables", category="Admin"))
 
-        admin.add_link(base.MenuLink(
-            category='Docs', name='Documentation',
-            url='http://pythonhosted.org/airflow/'))
-        admin.add_link(
-            base.MenuLink(category='Docs',
-                name='Github',url='https://github.com/airbnb/airflow'))
+        # av(vs.PoolModelView(
+        #     models.Pool, Session, name="Pools", category="Admin"))
+        # av(vs.ConfigurationView(
+        #     name='Configuration', category="Admin"))
+        # av(vs.UserModelView(
+        #     models.User, Session, name="Users", category="Admin"))
+        # av(vs.ConnectionModelView(
+        #     models.Connection, Session, name="Connections", category="Admin"))
+        # av(vs.VariableView(
+        #     models.Variable, Session, name="Variables", category="Admin"))
+
+        # admin.add_link(base.MenuLink(
+        #     category='Docs', name='Documentation',
+        #     url='http://pythonhosted.org/airflow/'))
+        # admin.add_link(
+        #     base.MenuLink(category='Docs',
+        #         name='Github',url='https://github.com/airbnb/airflow'))
 
         av(vs.DagRunModelView(
             models.DagRun, Session, name="DAG Runs", category="Browse"))

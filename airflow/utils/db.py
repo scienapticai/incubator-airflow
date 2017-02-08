@@ -200,7 +200,7 @@ def initdb():
     models.DagBag(sync_to_db=True)
 
     Chart = models.Chart
-    chart_label = "Airflow task instance by type"
+    chart_label = "Ether task instance by type"
     chart = session.query(Chart).filter(Chart.label == chart_label).first()
     if not chart:
         chart = Chart(
