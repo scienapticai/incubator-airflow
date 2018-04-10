@@ -460,7 +460,7 @@ class Airflow(BaseView):
         return self.render(
             'airflow/nvd3.html',
             chart=chart,
-            title="Airflow - Chart",
+            title="Ether - Chart",
             sql=sql,
             label=chart.label,
             embed=embed)
@@ -2588,7 +2588,7 @@ class ConfigurationView(wwwutils.SuperUserMixin, BaseView):
     @expose('/')
     def conf(self):
         raw = request.args.get('raw') == "true"
-        title = "Airflow Configuration"
+        title = "Ether Configuration"
         subtitle = conf.AIRFLOW_CONFIG
         if conf.getboolean("webserver", "expose_config"):
             with open(conf.AIRFLOW_CONFIG, 'r') as f:

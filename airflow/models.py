@@ -1501,7 +1501,7 @@ class TaskInstance(Base):
 
     def email_alert(self, exception, is_retry=False):
         task = self.task
-        title = "Airflow alert: {self}".format(**locals())
+        title = "Ether alert: {self}".format(**locals())
         exception = str(exception).replace('\n', '<br>')
         try_ = task.retries + 1
         body = (

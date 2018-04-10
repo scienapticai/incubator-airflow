@@ -18,7 +18,7 @@
 {% extends "airflow/master.html" %}
 {% import 'admin/lib.html' as lib with context %}
 
-{% block title %}Airflow - DAG {{ dag.dag_id }}{% endblock %}
+{% block title %}Ether - DAG {{ dag.dag_id }}{% endblock %}
 
 {% block head_css %}
   {{ lib.form_css() }}
@@ -69,7 +69,7 @@
           <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
           Task Tries
       </a></li>
-      <li>
+      <li class="hide">
         <a href="{{ url_for("airflow.landing_times", dag_id=dag.dag_id, days=30, root=root) }}">
           <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
           Landing Times

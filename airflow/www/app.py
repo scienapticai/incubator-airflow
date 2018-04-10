@@ -60,7 +60,7 @@ def create_app(config=None, testing=False):
         from airflow.www import views
 
         admin = Admin(
-            app, name='Airflow',
+            app, name='Ether',
             static_url_path='/admin',
             index_view=views.HomeView(endpoint='', url='/admin', name="DAGs"),
             template_mode='bootstrap3',
@@ -82,27 +82,27 @@ def create_app(config=None, testing=False):
             Session, name="Task Instances", category="Browse"))
         av(vs.LogModelView(
             models.Log, Session, name="Logs", category="Browse"))
-        av(vs.JobModelView(
-            jobs.BaseJob, Session, name="Jobs", category="Browse"))
-        av(vs.PoolModelView(
-            models.Pool, Session, name="Pools", category="Admin"))
-        av(vs.ConfigurationView(
-            name='Configuration', category="Admin"))
-        av(vs.UserModelView(
-            models.User, Session, name="Users", category="Admin"))
-        av(vs.ConnectionModelView(
-            models.Connection, Session, name="Connections", category="Admin"))
-        av(vs.VariableView(
-            models.Variable, Session, name="Variables", category="Admin"))
-        av(vs.XComView(
-            models.XCom, Session, name="XComs", category="Admin"))
-
-        admin.add_link(base.MenuLink(
-            category='Docs', name='Documentation',
-            url='http://pythonhosted.org/airflow/'))
-        admin.add_link(
-            base.MenuLink(category='Docs',
-                name='Github',url='https://github.com/airbnb/airflow'))
+        
+		av(vs.JobModelView(
+           jobs.BaseJob, Session, name="Jobs", category="Browse"))
+        #av(vs.PoolModelView(
+        #    models.Pool, Session, name="Pools", category="Admin"))
+        #av(vs.ConfigurationView(
+        #    name='Configuration', category="Admin"))
+        #av(vs.UserModelView(
+        #    models.User, Session, name="Users", category="Admin"))
+        #av(vs.ConnectionModelView(
+        #    models.Connection, Session, name="Connections", category="Admin"))
+        #av(vs.VariableView(
+        #    models.Variable, Session, name="Variables", category="Admin"))
+        #av(vs.XComView(
+        #    models.XCom, Session, name="XComs", category="Admin"))
+        #admin.add_link(base.MenuLink(
+        #    category='Docs', name='Documentation',
+        #    url='http://pythonhosted.org/airflow/'))
+        #admin.add_link(
+        #    base.MenuLink(category='Docs',
+        #        name='Github',url='https://github.com/airbnb/airflow'))
 
         av(vs.VersionView(name='Version', category="About"))
 

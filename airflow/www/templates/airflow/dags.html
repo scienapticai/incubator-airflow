@@ -17,7 +17,7 @@
 #}
 {% extends "airflow/master.html" %}
 
-{% block title %}Airflow - DAGs{% endblock %}
+{% block title %}Ether - DAGs{% endblock %}
 
 {% block head_css %}
 {{ super() }}
@@ -156,7 +156,7 @@
                 </a>
 
                 <!-- Landing Times -->
-                <a href="{{ url_for("airflow.landing_times", dag_id=dag.dag_id) }}" title="Landing Times">
+                <a class="hide" href="{{ url_for("airflow.landing_times", dag_id=dag.dag_id) }}" title="Landing Times">
                     <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
                 </a>
 
@@ -166,7 +166,7 @@
                 </a>
 
                 <!-- Code -->
-                <a href="{{ url_for("airflow.code", dag_id=dag.dag_id) }}" title="Code View">
+                <a class="hide" href="{{ url_for("airflow.code", dag_id=dag.dag_id) }}" title="Code View">
                     <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
                 </a>
 
